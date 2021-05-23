@@ -3,6 +3,7 @@
   height: 128px;
   border: 1px solid black;
   margin: 32px;
+  z-index: -1;
 }
 
 .closet-container:not(:last-of-type) {

@@ -3,32 +3,30 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 32px;
+  padding-top: 90px;
 }
 
 .preview-hero {
   font-size: 1.2rem;
-  font-weight: bold;
   width: 480px;
   height: 600px;
   border: 1px solid black;
 }
 
 .preview-name-wrapper {
-  width: 240px;
+  width: 204px;
   padding-bottom: 14px;
-  margin-top: 32px;
-  margin-bottom: 96px;
+  margin-top: 21px;
+  margin-bottom: 32px;
   border-bottom: 1px solid black;
   text-align: center;
 }
 
 .preview-name {
   font-size: 1.2rem;
-  font-weight: bold;
 }
 
-.preview-export {
-  font-size: 1.5rem;
-  padding: 12px;
+.preview-export-button > button {
+  font-size: 1.4rem !important;
+  transform: translate3d(-50%, calc(-50% + 5px), 0);
 }

@@ -3,6 +3,7 @@ import './Showcase.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ShowcaseCard from '../components/ShowcaseCard';
+import StairButtom from '../components/StairButton';
 import { getShowcaseImages } from '../utils/imageStorage';
 
 function Showcase() {
@@ -21,7 +22,7 @@ function Showcase() {
         ))}
       </main>
       <Footer />
-      <button className="showcase-home-button" onClick={handleGoHomeButtonClicked}>GOING HOME</button>
+      <StairButtom className="showcase-home-button" name="GOING HOME" onClick={handleGoHomeButtonClicked} />
     </div>
   )
 }

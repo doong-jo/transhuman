@@ -4,6 +4,7 @@ import './DressRoom.css';
 import Closet from '../components/Closet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import StairButton from '../components/StairButton';
 
 function DressRoom() {
   const [showIntro, setIntro] = useState(false);
@@ -31,16 +32,15 @@ function DressRoom() {
         <div className="dressroom-description-root-container">
           <div 
             className="dressroom-description-container" 
-            style={showIntro ? { transform: 'translateY(0px)', opacity: 1 } : {}}>
+            style={showIntro ? { transform: 'translate3d(0, 0, 0)', opacity: 1 } : {}}>
             <div>“과학기술의 변화와 발전은 단순히 산업 성장이나 경제 발전의 문제가 아니라, 인간의 활동과 그 삶에 의미를 부여하는 근본적인 조건이나 구조를 새롭게 상상하는 문제이기도 하다.”</div>
             <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lob</div>
-          </div>
-          <button 
-            className="dressroom-intro-show-button"
+            <button 
+            className={`dressroom-intro-show-button ${showIntro ? 'dressroom-intro-show-button-up' : 'dressroom-intro-show-button-down'}`}
             style={showIntro ? { transform: 'translate3d(-50%, 0, 0)' } : {}}
             onClick={handleIntroShowButtonClicked}>
-            {showIntro ? 'v' : '^'}
           </button>
+          </div>
         </div>
         <div className="dressroom-main-container">
           <div className="dressroom-main-closet">
@@ -48,7 +48,7 @@ function DressRoom() {
             <Closet name="HEADS" />
             <Closet name="SHOES" />
           </div>
-          <div className="dressroom-main-container-preview">Test!</div>
+          <div className="dressroom-main-container-preview"></div>
           <div className="dressroom-main-closet">
             <Closet name="TOP" />
             <Closet name="BOTTOM" />
@@ -59,10 +59,10 @@ function DressRoom() {
           ref={nameRef}
           className="dressroom-human-name"
           type="text"
-          placeholder="naming your human"
-          maxLength={20}
+          placeholder=""
+          maxLength={10}
         />
-        <button className="dressroom-done-button" onClick={handleDoneButtonClicked}>Done</button>
+        <StairButton className="dressroom-done-button" name="DONE" onClick={handleDoneButtonClicked} />
       </main>
       <Footer />
     </div>

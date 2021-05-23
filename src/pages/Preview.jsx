@@ -4,6 +4,7 @@ import domtoimage from 'dom-to-image';
 import './Preview.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import StairButton from '../components/StairButton';
 import { addShowcaseImage } from '../utils/imageStorage';
 
 function Preview() {
@@ -34,7 +35,7 @@ function Preview() {
         <div className="preview-name-wrapper">
           <span className="preview-name">{name}</span>
         </div>
-        <button className="preview-export" onClick={handleExportButtonClicked}>EXPORT</button>
+        <StairButton className="preview-export-button" name="EXPORT" onClick={handleExportButtonClicked} />
       </main>
       <Footer />
     </div>

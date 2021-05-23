@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Home.css';
+import StairButton from '../components/StairButton';
 
 function Home() {
   const [intialOpacity, setInitialOpacity] = useState(false);
@@ -17,7 +18,7 @@ function Home() {
   return (
     <main className="home-container">
       <div className="home-main-container" style={intialOpacity ? { opacity: 1 } : {}}>
-        <div>
+        <div className="home-main-hangeul">
           {`환영합니다.
           당신의 TransHuman을
           보여주세요.`}
@@ -29,7 +30,7 @@ function Home() {
         </div>
       </div>
       <div className="home-bottom-container">
-        <button className="next-button" onClick={handleNextButtonClicked}>Next</button>
+        <StairButton className="next-button" name="NEXT" onClick={handleNextButtonClicked} />
       </div>
     </main>
   );

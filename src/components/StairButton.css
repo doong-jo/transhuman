@@ -1,0 +1,54 @@
+.stair-button-container {
+  position: relative;
+  height: 72px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.stair-button-top {
+  width: 100px;
+  height: 24px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid white;
+  transform: translateY(2px);
+  z-index: 3;
+}
+
+.stair-button-medium {
+  width: 200px;
+  height: 24px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid white;
+  transform: translateY(1px);
+  z-index: 2;
+}
+
+.stair-button-bottom {
+  width: 240px;
+  height: 24px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  z-index: 1;
+}
+
+.stair-button-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 5px 10px;
+  font-size: 1.6rem;
+  border: 0;
+  background: transparent;
+  transform: translate3d(-50%, calc(-50% + 3px), 0);
+  z-index: 4;
+  cursor: pointer;
+}

@@ -15,7 +15,12 @@ function DressRoom() {
   }
 
   function handleDoneButtonClicked() {
-    console.log('nameRef.current.value', nameRef.current.value);
+    if(nameRef.current.value === '') {
+      alert('Type your TransHuman name.');
+      
+      return;
+    }
+
     history.push(`/preview/${nameRef.current.value}`);
   }
 
@@ -55,6 +60,7 @@ function DressRoom() {
           className="dressroom-human-name"
           type="text"
           placeholder="naming your human"
+          maxLength={20}
         />
         <button className="dressroom-done-button" onClick={handleDoneButtonClicked}>Done</button>
       </main>

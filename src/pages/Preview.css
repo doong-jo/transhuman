@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 32px;
 }
 
 .preview-hero {
@@ -10,13 +11,13 @@
   font-weight: bold;
   width: 480px;
   height: 600px;
-  margin: 32px 0;
   border: 1px solid black;
 }
 
 .preview-name-wrapper {
   width: 240px;
   padding-bottom: 14px;
+  margin-top: 32px;
   margin-bottom: 96px;
   border-bottom: 1px solid black;
   text-align: center;

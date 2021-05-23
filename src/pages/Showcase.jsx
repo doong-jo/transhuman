@@ -3,6 +3,7 @@ import './Showcase.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ShowcaseCard from '../components/ShowcaseCard';
+import { getShowcaseImages } from '../utils/imageStorage';
 
 function Showcase() {
   const history = useHistory();
@@ -15,17 +16,9 @@ function Showcase() {
     <div>
       <Header />
       <main className="showcase-grid-container">
-        <ShowcaseCard name="ABC" />
-        <ShowcaseCard name="ABC" />
-        <ShowcaseCard name="ABC" />
-        <ShowcaseCard name="ABC" />
-        <ShowcaseCard name="ABC" />
-        <ShowcaseCard name="ABC" />
-        <ShowcaseCard name="ABC" />
-        <ShowcaseCard name="ABC" />
-        <ShowcaseCard name="ABC" />
-        <ShowcaseCard name="ABC" />
-        <ShowcaseCard name="ABC" />
+        {getShowcaseImages().map(({ name, dataUrl }, index) => (
+          <ShowcaseCard key={`${name}-${index}`} name={name} dataUrl={dataUrl} />
+        ))}
       </main>
       <Footer />
       <button className="showcase-home-button" onClick={handleGoHomeButtonClicked}>GOING HOME</button>

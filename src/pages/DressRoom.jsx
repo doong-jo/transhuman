@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import './DressRoom.css';
 import Closet from '../components/Closet';
@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 
 function DressRoom() {
   const [showIntro, setIntro] = useState(false);
+  const nameRef = useRef();
   const history = useHistory();
 
   function handleIntroShowButtonClicked() {
@@ -14,7 +15,8 @@ function DressRoom() {
   }
 
   function handleDoneButtonClicked() {
-    history.push('/preview');
+    console.log('nameRef.current.value', nameRef.current.value);
+    history.push(`/preview/${nameRef.current.value}`);
   }
 
   return (
@@ -41,7 +43,7 @@ function DressRoom() {
             <Closet name="HEADS" />
             <Closet name="SHOES" />
           </div>
-          <div className="dressroom-main-container-preview"></div>
+          <div className="dressroom-main-container-preview">Test!</div>
           <div className="dressroom-main-closet">
             <Closet name="TOP" />
             <Closet name="BOTTOM" />
@@ -49,6 +51,7 @@ function DressRoom() {
           </div>
         </div>
         <input 
+          ref={nameRef}
           className="dressroom-human-name"
           type="text"
           placeholder="naming your human"

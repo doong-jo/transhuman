@@ -1,22 +1,38 @@
-import { useHistory } from 'react-router-dom';
+import { useRef } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
+import domtoimage from 'dom-to-image';
 import './Preview.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { addShowcaseImage } from '../utils/imageStorage';
 
 function Preview() {
   const history = useHistory();
+  const { name } = useParams();
+  const heroRef = useRef();
 
   function handleExportButtonClicked() {
-    history.push('/showcase');
+    if(heroRef.current !== null ) {
+      domtoimage.toPng(heroRef.current).then((dataUrl) => {
+        addShowcaseImage(name, dataUrl);
+        history.push('/showcase');
+      })
+    }
+  }
+
+  if (!name) {
+    history.push('/dressroom');
+
+    return null;
   }
 
   return (
     <div>
       <Header />
       <main className="preview-container">
-        <div className="preview-hero"></div>
+        <div ref={heroRef} className="preview-hero">{name}</div>
         <div className="preview-name-wrapper">
-          <span className="preview-name">ABC</span>
+          <span className="preview-name">{name}</span>
         </div>
         <button className="preview-export" onClick={handleExportButtonClicked}>EXPORT</button>
       </main>

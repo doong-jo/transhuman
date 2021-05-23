@@ -1,0 +1,28 @@
+.closet-container {
+  position: relative;
+  height: 128px;
+  border: 1px solid black;
+  margin: 32px;
+}
+
+.closet-container:not(:last-of-type) {
+  margin-bottom: 72px;
+}
+
+.closet-container > .title {
+  display: inline-flex;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  transform: translate3d(-1px, -100%, 0);
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid white;
+}
+
+.closet-container > .reset {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+}

@@ -1,0 +1,33 @@
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-hero {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 480px;
+  height: 600px;
+  margin: 32px 0;
+  border: 1px solid black;
+}
+
+.preview-name-wrapper {
+  width: 240px;
+  padding-bottom: 14px;
+  margin-bottom: 96px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.preview-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.preview-export {
+  font-size: 1.5rem;
+  padding: 12px;
+}

@@ -1,0 +1,16 @@
+.showcase-card {
+  position: relative;
+  width: 240px;
+  height: 300px;
+  border: 1px solid black;
+  margin-bottom: 48px;
+}
+
+.showcase-card > .name {
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transform: translateX(-50%);
+}
